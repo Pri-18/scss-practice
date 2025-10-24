@@ -1,0 +1,65 @@
+@use '../base' as base;
+
+.stats-section {
+  position: relative;
+  padding: 6rem 0;
+
+  @media screen and (max-width: base.$breakpoint-sm) {
+    padding: 4rem 0;
+  }
+}
+
+.stats {
+  @include base.responsive-grid(220px, 2rem);
+  position: absolute;
+  width: 100%;
+  top: -60px;
+  padding: 0 6.5rem;
+
+  .card {
+    padding: 1.5rem;
+    background-color: #FFFFFF;
+    box-shadow: 0 5px 40px #0000001f;
+    transition: 0.4s;
+
+    &__title {
+      font-weight: 400;
+      line-height: 1;
+      max-width: 40%;
+      color: base.$secondary-color;
+      font-family: base.$font-heading;
+    }
+
+    &__desc {
+      padding: 2.2rem 0 1.8rem;
+      font-size: 1rem;
+      color: base.$text-gray;
+      border-bottom: 4px solid base.$primary-color;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px #0000008a;
+      background-color: base.$secondary-color;
+
+      .card__title {
+        color: base.$primary-color;
+      }
+
+      .card__desc {
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  @media (max-width: base.$breakpoint-lg) {
+    top: -28px;
+    padding: 0 4rem;
+  }
+
+  @media screen and (max-width: base.$breakpoint-sm) {
+    position: static;
+    padding: 0 2rem;
+  }
+
+}

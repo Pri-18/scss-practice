@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../../fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../../fonts/Lato/Lato-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../../fonts/Lato/Lato-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+.header {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  background: #F5F5F5;
+  box-shadow: 0 0 0 100vmax #F5F5F5;
+  clip-path: inset(0 -100vmax 0 -100vmax);
+}
+.header__nav {
+  min-width: 33.33%;
+}
+.header__logo img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header__nav-link {
+  text-decoration: none;
+  color: #3D3D3D;
+  font-weight: 500;
+}
+.header__nav-link--active {
+  color: #FEBB0C;
+}
+.header__buttons {
+  min-width: 33.33%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.header .nav__list {
+  display: flex;
+  gap: 2rem;
+}
+.header .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  margin-left: auto;
+}
+.header .hamburger span {
+  display: block;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 992px) {
+  .header .hamburger {
+    display: flex;
+  }
+  .header .header__nav,
+  .header .header__buttons {
+    display: none;
+  }
+  .header .header__logo {
+    order: -1;
+  }
+}
+
+.hero-section {
+  background: #F5F5F5;
+  box-shadow: 0 0 0 100vmax #F5F5F5;
+  clip-path: inset(0 -100vmax 0 -100vmax);
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero__content {
+  max-width: 49%;
+}
+.hero__content__subtitle {
+  color: #007A82;
+  margin: 0 0 0 5rem;
+  position: relative;
+}
+.hero__content__subtitle::before {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 3px;
+  background-color: #FEBB0C;
+  left: -78px;
+  top: 10px;
+}
+.hero__content__title {
+  margin: 1.5rem 0;
+  font-family: "Bebas Neue", cursive;
+}
+.hero__content__text {
+  margin: 2rem 0;
+  color: #777575;
+}
+.hero__image {
+  background: url("/Images/banner-img.png") center;
+  width: 47%;
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero .industries {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+  max-width: 70%;
+  color: #777575;
+}
+.hero .industries__item:after {
+  content: "";
+  display: inline-block;
+  height: 11px;
+  width: 10px;
+  background-color: #f4b400;
+  border-radius: 50%;
+  margin-left: 1.5rem;
+}
+.hero .industries__item:nth-child(3n)::after,
+.hero .industries__item:last-child::after {
+  content: "";
+  background: none;
+}
+@media screen and (max-width: 1200px) {
+  .hero__image {
+    height: 500px;
+  }
+  .hero .industries__item:after {
+    margin-left: 5px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .hero .industries {
+    gap: 2rem;
+  }
+  .hero .industries__item:after {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero {
+    align-items: flex-start;
+  }
+  .hero__image {
+    height: 450px;
+    background-size: contain;
+  }
+}
+@media screen and (max-width: 576px) {
+  .hero {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .hero__content {
+    max-width: 100%;
+  }
+  .hero__image {
+    min-width: 100%;
+    height: 250px;
+  }
+}
+
+.stats-section {
+  position: relative;
+  padding: 6rem 0;
+}
+@media screen and (max-width: 768px) {
+  .stats-section {
+    padding: 4rem 0;
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  position: absolute;
+  width: 100%;
+  top: -60px;
+  padding: 0 6.5rem;
+}
+.stats .card {
+  padding: 1.5rem;
+  background-color: #FFFFFF;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.1215686275);
+  transition: 0.4s;
+}
+.stats .card__title {
+  font-weight: 400;
+  line-height: 1;
+  max-width: 40%;
+  color: #007A82;
+  font-family: "Bebas Neue", cursive;
+}
+.stats .card__desc {
+  padding: 2.2rem 0 1.8rem;
+  font-size: 1rem;
+  color: #777575;
+  border-bottom: 4px solid #FEBB0C;
+}
+.stats .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5411764706);
+  background-color: #007A82;
+}
+.stats .card:hover .card__title {
+  color: #FEBB0C;
+}
+.stats .card:hover .card__desc {
+  color: #FFFFFF;
+}
+@media (max-width: 1200px) {
+  .stats {
+    top: -28px;
+    padding: 0 4rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .stats {
+    position: static;
+    padding: 0 2rem;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  color: #007A82;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  transition: 0.3s ease;
+  border: 1px solid transparent;
+}
+.btn--primary {
+  background: #007A82;
+  color: #fff;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+html {
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 6rem);
+  font-weight: 500;
+  color: #3D3D3D;
+  line-height: 1;
+}
+
+h3 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+}
+
+p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #007A82;
+  border: 1px solid #007A82;
+}
+
+.header__nav-link:hover {
+  transition: 0.3s;
+  color: #FEBB0C;
+}/*# sourceMappingURL=main.css.map */

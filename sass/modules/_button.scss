@@ -1,0 +1,17 @@
+@use '../base/variables' as vars;
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  color: vars.$secondary-color;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  transition: 0.3s ease;
+  border: 1px solid transparent;
+
+  &--primary {
+    background: vars.$secondary-color;
+    color: #fff;
+  }
+}
