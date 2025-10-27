@@ -4,6 +4,12 @@
   background: base.$section-bg;
   box-shadow: 0 0 0 100vmax base.$section-bg;
   clip-path: inset(0 -100vmax 0 -100vmax);
+
+  @media screen and (max-width: base.$breakpoint-md) {
+    background: transparent;
+    box-shadow: none;
+    clip-path: none;
+  }
 }
 
 .hero {
@@ -43,7 +49,7 @@
   }
 
   &__image {
-    background: url('../../Images/banner-img.png') center;
+    background: url('../Images/banner-img.png') center;
     width: 47%;
     height: 700px;
     background-repeat: no-repeat;
@@ -64,7 +70,7 @@
     display: inline-block;
     height: 11px;
     width: 10px;
-    background-color: #f4b400;
+    background-color: base.$primary-color;
     border-radius: 50%;
     margin-left: 1.5rem;
   }
@@ -86,6 +92,7 @@
   }
 
   @media screen and (max-width: base.$breakpoint-md) {
+
     .industries {
       gap: 2rem;
     }
@@ -93,6 +100,15 @@
     .industries__item:after {
       display: none;
     }
+
+    .hero-section {
+
+      background: transparent;
+      box-shadow: none;
+      clip-path: none;
+
+    }
+
   }
 
   @media screen and (max-width: base.$breakpoint-sm) {
